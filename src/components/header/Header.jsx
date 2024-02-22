@@ -10,7 +10,7 @@ export function Header() {
         <div style={{ color: theme.color, backgroundColor: theme.background }}>
             <HeaderTopInfo>
                 <ThemeToggleButton />
-                <HeaderInput placeholder='Search for a Pokemon'/>
+                <HeaderInput placeholder='Search for a Pokémon'/>
             </HeaderTopInfo>
 
             <HeaderContainer>
@@ -39,17 +39,23 @@ const HeaderTopInfo = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 10px;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 const HeaderInput = styled.input`
     height: 2rem;
-    width: 15rem;
     padding: 10px 20px;
     border: 2px solid var(--gold-yellow);
+    max-width: 15rem;
 
     &:focus {
         outline: none;
-    }
+    }          
 `
 
 
