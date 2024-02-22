@@ -19,8 +19,7 @@ const BtnGeneral  = styled.button`
     border-radius: 15px;
     cursor: pointer;
     font-size: 1rem; 
-    border: 2px solid var(--gold-yellow);
-    margin: 1rem;
+    border: 2px solid var(--card-yellow);
 
     &:focus {
       outline: none

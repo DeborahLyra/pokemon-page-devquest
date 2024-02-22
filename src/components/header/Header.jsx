@@ -50,8 +50,9 @@ const HeaderTopInfo = styled.div`
 const HeaderInput = styled.input`
     height: 2rem;
     padding: 10px 20px;
-    border: 2px solid var(--gold-yellow);
+    border: 2px solid var(--card-yellow);
     max-width: 15rem;
+    border-radius: 5px;
 
     &:focus {
         outline: none;

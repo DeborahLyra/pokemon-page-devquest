@@ -59,9 +59,7 @@ const DivCard = styled.div`
             background-color: var(--blue-dark); 
             font-weight: 400;
         }
-    }
-
-    
+    } 
 `
 
 const DivImgCard = styled.div`

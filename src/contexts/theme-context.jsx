@@ -13,6 +13,7 @@ export const themes = {
         background: "#808080",
         btnBackground: "#696969",
         cardBackground: '#708090',
+        cardColor: '#ffcb05',
     }
 }
 
