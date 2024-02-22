@@ -1,6 +1,8 @@
 :root {
   --gold-yellow: #FFD700;
- 
+  --blue: #316cb3;
+  --card-yellow: #ffcb05;
+  --blue-dark: #16529b;
 }
 
 * {

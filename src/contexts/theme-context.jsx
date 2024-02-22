@@ -4,12 +4,15 @@ export const themes = {
     light: {
         color: "#000000",
         background: "#F5F5F5",
-        btnBackground:'#FFFAFA'
+        btnBackground:'#FFFAFA',
+        cardBackground: '#ffcb05',
+        cardColor: '#316cb3',
     },
     dark: {
         color: "#ffffff",
         background: "#808080",
         btnBackground: "#696969",
+        cardBackground: '#708090',
     }
 }
 
