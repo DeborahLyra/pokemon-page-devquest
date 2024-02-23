@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
-import { CardsList } from '../cardsList/CardsList';
+import { CardsList } from '../cardsList';
 import styled from 'styled-components';
 import axios from 'axios';
 import { AddMoreButton } from '../addMoreButton/AddMoreButton';
@@ -22,7 +22,7 @@ export function MainPage() {
                 };
             }));
             setPokemons(pokemonData);
- 
+            console.log(response.data)
         } catch (error) {
             console.error('Error fetching Pokémon data:', error);
         }
