@@ -3,12 +3,13 @@ import { ThemeContext } from '../../contexts/theme-context';
 import { CardsList } from '../cardsList/CardsList';
 import styled from 'styled-components';
 import axios from 'axios';
+import { AddMoreButton } from '../addMoreButton/AddMoreButton';
 
 export function MainPage() {
     const { theme } = useContext(ThemeContext)
 
     const [pokemons, setPokemons] = useState([])
-    const [offset, setOffset] = useState(0);
+  
 
     const getPokemons = async () => {
         try {
@@ -33,9 +34,16 @@ export function MainPage() {
 
     console.log(pokemons)
     return (
-        <div style={{ color: theme.color, backgroundColor: theme.background }}>
+        <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
             <CardsList pokemon={pokemons} />
-        </div>
+            <AddMoreButton/>
+        </DivMainPage>
     )
 }
 
+const DivMainPage = styled.div`
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`

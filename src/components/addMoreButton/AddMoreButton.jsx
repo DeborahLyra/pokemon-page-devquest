@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import { ThemeContext, themes } from '../../contexts/theme-context'
 import { Button } from '../button/Button.jsx'
 
-export function ThemeToggleButton() {
+export function AddMoreButton() {
 
     const { theme, setTheme }  = useContext(ThemeContext)
 
   return (
     <div>
-    <Button onClick = {()=> setTheme(theme === themes.light ? themes.dark : themes.light)}>Change to {theme === themes.light ? "Dark Mode" : "Light Mode" }</Button>
+    <Button>Click to load more</Button>
   </div>
   )
 }
