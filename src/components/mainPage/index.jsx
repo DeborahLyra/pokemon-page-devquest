@@ -9,11 +9,12 @@ export function MainPage() {
     const { theme } = useContext(ThemeContext)
 
     const [pokemons, setPokemons] = useState([])
+    const [limit, setLimit] = useState(10)
   
 
     const getPokemons = async () => {
         try {
-            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=10`)
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`)
             const pokemonData = await Promise.all(response.data.results.map(async (pokemon) => {
                 const pokemonResponse = await axios.get(pokemon.url);
                 return {
@@ -22,6 +23,7 @@ export function MainPage() {
                 };
             }));
             setPokemons(pokemonData);
+            setLimit(limit + 10)
             console.log(response.data)
         } catch (error) {
             console.error('Error fetching Pokémon data:', error);
@@ -36,7 +38,7 @@ export function MainPage() {
     return (
         <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
             <CardsList pokemon={pokemons} />
-            <AddMoreButton/>
+            <AddMoreButton onClick = {()=>getPokemons()} />
         </DivMainPage>
     )
 }

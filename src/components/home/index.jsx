@@ -4,11 +4,11 @@ import { MainPage } from '../mainPage/index';
 
 export const Home = () => {
     return (
-       
-            <ThemeProvider>
-                <Header />
-                <MainPage />
-            </ThemeProvider>
-        
+
+        <ThemeProvider>
+            <Header />
+            <MainPage />
+        </ThemeProvider>
+
     )
 }
