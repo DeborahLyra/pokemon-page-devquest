@@ -24,7 +24,7 @@ export function MainPage() {
             }));
             setPokemons(pokemonData);
             setLimit(limit + 10)
-            console.log(response.data)
+            // console.log(response.data)
         } catch (error) {
             console.error('Error fetching Pokémon data:', error);
         }
@@ -34,10 +34,10 @@ export function MainPage() {
         getPokemons()
     }, [])
 
-    console.log(pokemons)
+    // console.log(pokemons)
     return (
         <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
-            <CardsList pokemon={pokemons} />
+            <CardsList pokemon={pokemons}/>
             <AddMoreButton onClick = {()=>getPokemons()} />
         </DivMainPage>
     )

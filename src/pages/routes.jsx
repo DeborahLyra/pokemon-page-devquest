@@ -6,7 +6,7 @@ export const AppRoutes = () => (
     <BrowserRouter>
         <Routes>
             <Route exact path='/' element={<HomePage />} />
-            <Route exact path='/details' element={<CardDetailsPage />} />
+            <Route exact path='/details/:id' element={<CardDetailsPage />} />
         </Routes>
     </BrowserRouter>
 )

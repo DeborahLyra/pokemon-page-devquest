@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 export function CardsList({ pokemon }) {
     const { theme } = useContext(ThemeContext)
@@ -12,7 +14,7 @@ export function CardsList({ pokemon }) {
                     <DivImgCard>
                         <img src={poke.image} alt={poke.name} />
                     </DivImgCard>
-                <a>Click here for details</a>
+                <Link to={`/details/${index + 1}`}>Click here for details</Link>
                 </DivCard>
             ))}
         </DivCardContainer>
