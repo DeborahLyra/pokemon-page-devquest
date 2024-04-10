@@ -12,7 +12,7 @@ export function CardsList({ pokemon }) {
                     <DivImgCard>
                         <img src={poke.image} alt={poke.name} />
                     </DivImgCard>
-                <button>Click here for more</button>
+                <a>Click here for details</a>
                 </DivCard>
             ))}
         </DivCardContainer>
@@ -43,10 +43,10 @@ const DivCard = styled.div`
         width: 100%;
     }
 
-    button {
+    a {
         width: 100%;
         padding: 5px;
-        margin-top: 0.2rem;
+        margin-top: 0.5rem;
         background-color: var(--blue);
         color: var(--card-yellow);
         font-weight: bold;
@@ -54,10 +54,13 @@ const DivCard = styled.div`
         border: none;
         border-radius: 5px;
         transition: background-color 0.3s; 
+       
+
+        display: flex;
+        
 
         &:hover {
             background-color: var(--blue-dark); 
-            font-weight: 400;
         }
     } 
 `

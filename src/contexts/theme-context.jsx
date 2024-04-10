@@ -7,6 +7,7 @@ export const themes = {
         btnBackground:'#FFFAFA',
         cardBackground: '#ffcb05',
         cardColor: '#316cb3',
+        detailsHeaderColor: '#316cb3',
     },
     dark: {
         color: "#ffffff",
@@ -14,6 +15,7 @@ export const themes = {
         btnBackground: "#696969",
         cardBackground: '#708090',
         cardColor: '#ffcb05',
+        detailsHeaderColor: '#16529b',
     }
 }
 
