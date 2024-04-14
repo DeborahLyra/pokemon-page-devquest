@@ -40,10 +40,13 @@ export function MainPage() {
     const getPomeonsByName = async (name) => {
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-            console.log(response.data.sprites.front_default)
+            console.log(response.data.sprites)
             const pokemonData = {
                 name: response.data.name,
                 image: response.data.sprites.front_default
+
+
+
             }
             setPokemons([pokemonData]);
             // console.log(response.data)
@@ -58,29 +61,29 @@ export function MainPage() {
         setSearch(query);
     }
 
-    if(pokemons.length === 1){
+    if (pokemons.length === 1) {
 
-    return (
-      
-        <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
-            <DivSearchPoke>
-                <label htmlFor="input">Search for a Pokémon</label>
-                <SearchInput
-                    id='input'
-                    placeholder='Search for a Pokémon'
-                    style={{ color: theme.color, backgroundColor: theme.background }}
-                    onChange={getName}
-                />
-                <button onClick={() => getPomeonsByName(search)}>Search</button>
-            </DivSearchPoke>
+        return (
 
-            <CardsList pokemon={pokemons} />
-        </DivMainPage>
-    )
+            <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
+                <DivSearchPoke>
+                    <label htmlFor="input">Search for a Pokémon</label>
+                    <SearchInput
+                        id='input'
+                        placeholder='Search for a Pokémon'
+                        style={{ color: theme.color, backgroundColor: theme.background }}
+                        onChange={getName}
+                    />
+                    <button onClick={() => getPomeonsByName(search)}>Search</button>
+                </DivSearchPoke>
+
+                <CardsList pokemon={pokemons} />
+            </DivMainPage>
+        )
     }
 
     return (
-      
+
         <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
             <DivSearchPoke>
                 <label htmlFor="input">Search for a Pokémon</label>
@@ -94,8 +97,8 @@ export function MainPage() {
             </DivSearchPoke>
 
             <CardsList pokemon={pokemons} />
-           
-           <AddMoreButton onClick={() => getPokemons()} />
+
+            <AddMoreButton onClick={() => getPokemons()} />
         </DivMainPage>
     )
 }
@@ -105,7 +108,7 @@ const DivMainPage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh
+    
 
     label{
         font-size: 1.5rem;
