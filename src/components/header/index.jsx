@@ -10,7 +10,7 @@ export function Header() {
         <div style={{ color: theme.color, backgroundColor: theme.background }}>
             <HeaderTopInfo>
                 <ThemeToggleButton />
-                <HeaderInput placeholder='Search for a Pokémon'/>
+                
             </HeaderTopInfo>
 
             <HeaderContainer>
@@ -21,7 +21,7 @@ export function Header() {
 }
 
 const HeaderContainer = styled.header`
-    height: 25vh;
+    height: 20vh;
     border-bottom: 2px solid var(--gold-yellow);
     display: flex;
     align-items: center;
@@ -47,16 +47,6 @@ const HeaderTopInfo = styled.div`
     }
 `
 
-const HeaderInput = styled.input`
-    height: 2rem;
-    padding: 10px 20px;
-    border: 2px solid var(--card-yellow);
-    max-width: 15rem;
-    border-radius: 5px;
 
-    &:focus {
-        outline: none;
-    }          
-`
 
 

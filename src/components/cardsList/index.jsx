@@ -2,10 +2,36 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Button } from '../button/Button';
 
 
 export function CardsList({ pokemon }) {
+
+    const reloadPage = () => {
+        window.location.reload();
+    };
+
     const { theme } = useContext(ThemeContext)
+    if (pokemon.length === 1) {
+
+        const poke = pokemon[0];
+        return (
+            <DivCardContainerSearch style={{ color: theme.color, backgroundColor: theme.background }}>
+                <DivCard style={{ color: theme.cardColor, backgroundColor: theme.cardBackground }}>
+                    <h4>{poke.name}</h4>
+                    <DivImgCard>
+                        <img src={poke.image} alt={poke.name} />
+                    </DivImgCard>
+                    <Link to={`/details/${poke.name}`}>Click here for details</Link>
+                </DivCard>
+                <button style={{ color: theme.color, backgroundColor: theme.background }}
+                    onClick={reloadPage}
+                >Back to the List
+                </button>
+            </DivCardContainerSearch>
+
+        );
+    }
     return (
         <DivCardContainer style={{ color: theme.color, backgroundColor: theme.background }}>
             {pokemon.map((poke, index) => (
@@ -14,7 +40,7 @@ export function CardsList({ pokemon }) {
                     <DivImgCard>
                         <img src={poke.image} alt={poke.name} />
                     </DivImgCard>
-                <Link to={`/details/${index + 1}`}>Click here for details</Link>
+                    <Link to={`/details/${index + 1}`}>Click here for details</Link>
                 </DivCard>
             ))}
         </DivCardContainer>
@@ -28,6 +54,27 @@ const DivCardContainer = styled.div`
    justify-content: center;
    padding: 1.5rem;
    gap: 2rem;
+   
+`
+
+const DivCardContainerSearch = styled.div`
+   padding: 1.5rem;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    button{
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem; 
+    border: 2px solid var(--card-yellow);
+    margin-top: 1rem; 
+
+    &:focus {
+      outline: none
+    }
+    }
+   
 `
 
 const DivCard = styled.div`
