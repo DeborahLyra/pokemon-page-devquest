@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../../contexts/theme-context';
 import { Button } from '../button/Button'
@@ -115,7 +115,12 @@ background-color: var(--blue);
 `
 
 const UlAbilities = styled.ul`
-
+height: 150px;
+overflow-y: auto;
+border: 2px solid var(--gold-yellow);
+border-radius: 5px;
+padding: 8px;
+background-color: var(--blue);
 
   li {
     font-size: 1.2rem;

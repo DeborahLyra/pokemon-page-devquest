@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+/* eslint-disable react/prop-types */
+import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button } from '../button/Button';
 
 
 export function CardsList({ pokemon }) {
